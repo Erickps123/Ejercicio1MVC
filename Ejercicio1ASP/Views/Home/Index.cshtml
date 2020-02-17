@@ -1,0 +1,21 @@
+﻿@model Numero
+<h1>INVERTIR NUMERO DE DOS CIFRAS</h1>
+    <div class="row">
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <div class="">
+
+                @Html.TextBoxFor(x => x.number,
+                   new { @class = "form-control", placeholder = "Numero",type="number" })
+                @Html.ValidationMessageFor(x => x.number, null, new { @class = "txt" })
+                <br />
+                <button class="btn btn-primary" type="submit">
+                    Enviar numero
+                </button>
+            </div>
+
+        }
+
+    <p style="margin: 2%">El numero Invertido Es: @ViewData["NumeroInver"]</p>
+    </div>
